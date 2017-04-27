@@ -1,0 +1,6 @@
+const updateProfile = (evt) => {
+  this.setState({ profile: evt.target.value })
+}
+
+// pseudocode but you'll see what I mean
+<UserProfile onClick={this.updateProfile}></UserProfile>

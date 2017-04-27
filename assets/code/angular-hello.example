@@ -1,0 +1,13 @@
+@Component({
+  selector: 'Cart'
+})
+
+@View({
+ templateUrl: './components/Cart.html'
+})
+
+export class Cart {
+  constructor() {
+    this.comparison= “Vue2 vs Angular 2!”;
+  }
+}

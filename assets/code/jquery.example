@@ -1,0 +1,5 @@
+$('a.user-profile-edit').click(function(){
+  // let's update the user profile
+  var updatedProfile = $('.user-profile').html().updateProfile()
+  $('.user-profile').html(updatedProfile);
+});

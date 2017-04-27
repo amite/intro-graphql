@@ -1,0 +1,3 @@
+var link = function(height = 50, color = 'red', url = 'http://azat.co') {
+  ...
+}
