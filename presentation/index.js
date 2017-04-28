@@ -55,7 +55,10 @@ const images = {
   user_widget: require("../assets/user_widget.jpg"),
   annoyed: require("../assets/annoyed.gif"),
   widget_query: require("../assets/widget_query.png"),
-  graphql_architechture: require("../assets/graphql_architechture.png"), 
+  graphql_architechture: require("../assets/graphql_architechture.png"),
+  graphql_vs_rest: require("../assets/graphql_vs_rest.png"),
+  graphql_result: require("../assets/graphql_result.png"),
+  graphql_result_2: require("../assets/graphql_result_2.png"),
 };
 
 preloader(images);
@@ -66,9 +69,9 @@ const theme = createTheme({
   tertiary: "#03A9FC",
   quartenary: "#CECECE"
 }, {
-    primary: "Montserrat",
-    secondary: "Helvetica"
-  });
+  primary: "Montserrat",
+  secondary: "Helvetica"
+});
 
 export default class Presentation extends React.Component {
   render() {
@@ -87,8 +90,8 @@ export default class Presentation extends React.Component {
             What is GraphQL?
           </Heading>
           <Appear>
-          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            What do you think it is?
+            <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
+              What do you think it is?
           </Text>
           </Appear>
         </Slide>
@@ -97,7 +100,7 @@ export default class Presentation extends React.Component {
             So what's the problem?
           </Heading>
           <Appear>
-          <Image src={images.full_profile.replace("/", "")} margin="0px auto 40px" height="650px"/>
+            <Image src={images.full_profile.replace("/", "")} margin="0px auto 40px" height="650px" />
           </Appear>
         </Slide>
         <Slide transition={["zoom"]} bgColor="primary">
@@ -108,29 +111,29 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <Slide bgColor="tertiary">
-          <Image src={images.why.replace("/", "")} margin="0px auto 40px" height="550px"/>
+          <Image src={images.why.replace("/", "")} margin="0px auto 40px" height="550px" />
         </Slide>
         <Slide bgColor="tertiary">
           <Text margin="40px 0" textColor="primary" size={1} fit bold>
             Meanwhile..in another place
           </Text>
-          <Image src={images.user_widget.replace("/", "")} margin="0px auto 40px" height="550px"/>
+          <Image src={images.user_widget.replace("/", "")} margin="0px auto 40px" height="550px" />
         </Slide>
         <Slide bgColor="tertiary">
           <Text margin="40px 0" textColor="primary" size={1} fit bold>
             And now you're wonnderring...
           </Text>
-          <Image src={images.annoyed.replace("/", "")} margin="0px auto 40px" height="550px"/>
+          <Image src={images.annoyed.replace("/", "")} margin="0px auto 40px" height="550px" />
         </Slide>
         <Slide bgColor="secondary">
           <Text margin="40px 0" textColor="primary" textSize={58} bold>
             but now what if...
           </Text>
-          <Image src={images.widget_query.replace("/", "")} margin="0px auto 40px" height="600px"/>
+          <Image src={images.widget_query.replace("/", "")} margin="0px auto 40px" height="600px" />
         </Slide>
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <BlockQuote>
-            <Quote>..instead of having multiple “dumb” endpoints, have a single “smart” 
+            <Quote>..instead of having multiple “dumb” endpoints, have a single “smart”
             endpoint...</Quote>
             <Cite>Sacha Greif</Cite>
           </BlockQuote>
@@ -138,20 +141,20 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="tertiary">
           <Heading size={1} textColor="primary" caps>And that's GraphQL</Heading>
         </Slide>
-         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-            <Heading size={3} textColor="secondary" caps>Some Problems with REST 😕</Heading>
-            <List>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={3} textColor="secondary" caps>Some Problems with REST 😕</Heading>
+          <List>
             <Appear><ListItem>lots of endpoints</ListItem></Appear>
             <Appear><ListItem>ambigous endpoints</ListItem></Appear>
             <Appear><ListItem>weird boundaries btwn client & servers</ListItem></Appear>
-            </List>
-         </Slide>
-         <Slide bgColor="secondary">
+          </List>
+        </Slide>
+        <Slide bgColor="secondary">
           <Text margin="40px 0" textColor="primary" textSize={44} bold>
             Where GraphQL sits in your architecture
           </Text>
-          <Image src={images.graphql_architechture.replace("/", "")} margin="0px auto 40px" height="600px"/>
-         </Slide>
+          <Image src={images.graphql_architechture.replace("/", "")} margin="0px auto 40px" height="600px" />
+        </Slide>
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={3} textColor="secondary" caps> 🎸 Why GraphQL Rocks 🙌</Heading>
@@ -162,11 +165,27 @@ export default class Presentation extends React.Component {
             <Appear><ListItem>Decouple API and database schemas</ListItem></Appear>
           </List>
         </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
-          </BlockQuote>
+        <Slide transition={["zoom"]} bgColor="primary">
+          <CodePane
+            textSize={58}
+            lang="jsx"
+            source={require("raw-loader!../assets/code/graphql-hello.example")}
+            margin="-280px auto"
+          />
+        </Slide>
+        <Slide transition={["zoom"]} bgColor="primary">
+          <CodePane
+            textSize={48}
+            lang="jsx"
+            source={require("raw-loader!../assets/code/graphql-hello-2.example")}
+            margin="-280px auto"
+          />
+        </Slide>
+        <Slide bgColor="secondary">
+          <Image src={images.graphql_result.replace("/", "")} margin="0px auto 40px" height="600px" />
+        </Slide>
+        <Slide bgColor="secondary">
+          <Image src={images.graphql_result_2.replace("/", "")} margin="0px auto 40px" height="650px" />
         </Slide>
       </Deck>
     );
