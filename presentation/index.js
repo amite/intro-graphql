@@ -77,7 +77,7 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
-        <Slide transition={["fade"]} bgImage={images.splash.replace("/", "")} bgDarken={0.45} textColor="tertiary">
+        <Slide transition={["fade"]} bgImage={images.splash.replace("/", "")} bgDarken={0.50} textColor="tertiary">
           <Image src={images.logo.replace("/", "")} margin="0px auto 20px" height="200px"/>
           <Heading size={1} textColor="primary" caps>Intro to GraphQL</Heading>
         </Slide>
@@ -127,13 +127,6 @@ export default class Presentation extends React.Component {
           </Text>
           <Image src={images.widget_query.replace("/", "")} margin="0px auto 40px" height="600px" />
         </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <BlockQuote>
-            <Quote>..instead of having multiple “dumb” endpoints, have a single “smart”
-            endpoint...</Quote>
-            <Cite>Sacha Greif</Cite>
-          </BlockQuote>
-        </Slide>
         <Slide transition={["fade"]} bgColor="tertiary">
           <Heading size={1} textColor="primary" caps>And that's GraphQL</Heading>
         </Slide>
@@ -182,6 +175,11 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide bgColor="secondary">
           <Image src={images.graphql_result_2.replace("/", "")} margin="0px auto 40px" height="650px" />
+        </Slide>
+        <Slide bgColor="secondary">
+          <Text margin="40px 0" textColor="primary" textSize={44} bold>
+            Let's do it live
+          </Text>
         </Slide>
       </Deck>
     );
