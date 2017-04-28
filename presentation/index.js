@@ -46,9 +46,9 @@ require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
-  city: require("../assets/city.jpg"),
+  splash: require("../assets/splash.jpg"),
   kat: require("../assets/kat.png"),
-  logo: require("../assets/formidable-logo.svg"),
+  logo: require("../assets/graphql_logo.png"),
   markdown: require("../assets/markdown.png"),
   full_profile: require("../assets/full_user_profile.png"),
   why: require("../assets/why.gif"),
@@ -66,7 +66,7 @@ preloader(images);
 const theme = createTheme({
   primary: "white",
   secondary: "#1F2022",
-  tertiary: "#03A9FC",
+  tertiary: "#e10098",
   quartenary: "#CECECE"
 }, {
   primary: "Montserrat",
@@ -77,13 +77,9 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
-        <Slide transition={["zoom"]} bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Intro to GraphQL
-          </Heading>
-          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            Just the beginner basics + Quick Demo
-          </Text>
+        <Slide transition={["fade"]} bgImage={images.splash.replace("/", "")} bgDarken={0.45} textColor="tertiary">
+          <Image src={images.logo.replace("/", "")} margin="0px auto 20px" height="200px"/>
+          <Heading size={1} textColor="primary" caps>Intro to GraphQL</Heading>
         </Slide>
         <Slide transition={["zoom"]} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
