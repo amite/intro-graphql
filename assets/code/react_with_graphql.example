@@ -1,0 +1,15 @@
+const FeedQuery = gql`query allPosts {
+  allPosts(orderBy: createdAt_DESC) {
+    id
+    imageUrl
+    description
+  }
+}`
+
+const ListPageWithData = graphql(FeedQuery, {
+  options: {
+    fetchPolicy: 'network-only'
+  },
+})(ListPage)
+
+export default ListPageWithData
