@@ -59,6 +59,9 @@ const images = {
   graphql_vs_rest: require("../assets/graphql_vs_rest.png"),
   graphql_result: require("../assets/graphql_result.png"),
   graphql_result_2: require("../assets/graphql_result_2.png"),
+  live: require("../assets/live.gif"),
+  dance: require("../assets/dance.gif"),
+  rest: require("../assets/rest.png"), 
 };
 
 preloader(images);
@@ -90,6 +93,16 @@ export default class Presentation extends React.Component {
               What do you think it is?
           </Text>
           </Appear>
+        </Slide>
+        <Slide transition={["zoom"]} bgColor="primary">
+          <Heading size={5} fit caps lineHeight={1} textColor="secondary" margin="30px auto" >
+            Does everyone know what rest is?
+          </Heading>
+          <Image src={images.rest.replace("/", "")} margin="0px auto 40px" height="550px" />
+        </Slide>
+        <Slide transition={["slide"]} bgColor="primary">
+            <Link href="https://api.meetup.com/2/rsvps?offset=0&format=json&rsvp=yes&event_id=238695705&photo-host=public&page=100&fields=&omit=venue%2Cmember_photo%2Ccreated%2Cguests%2Crsvp_id%2Cevent%2Cgroup%2Cresponse%2Cmtime&order=event&desc=false&sig_id=161221962&sig=95ffa0225a060c087abd27bc9a55159b79da48b1">Lets get your names</Link>
+            <Appear><Text margin="30px 0">https://api.meetup.com/2/rsvps</Text></Appear>
         </Slide>
         <Slide transition={["zoom"]} bgColor="primary">
           <Heading size={5} fit caps lineHeight={1} textColor="secondary" margin="30px auto" >
@@ -127,6 +140,9 @@ export default class Presentation extends React.Component {
           </Text>
           <Image src={images.widget_query.replace("/", "")} margin="0px auto 40px" height="600px" />
         </Slide>
+        <Slide bgColor="secondary">
+          <Image src={images.dance.replace("/", "")} margin="0px auto 40px" height="600px" />
+        </Slide>
         <Slide transition={["fade"]} bgColor="tertiary">
           <Heading size={1} textColor="primary" caps>And that's GraphQL</Heading>
         </Slide>
@@ -157,7 +173,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["zoom"]} bgColor="primary">
           <CodePane
             textSize={58}
-            lang="jsx"
+            lang="json"
             source={require("raw-loader!../assets/code/graphql-hello.example")}
             margin="-280px auto"
           />
@@ -165,7 +181,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["zoom"]} bgColor="primary">
           <CodePane
             textSize={48}
-            lang="jsx"
+            lang="json"
             source={require("raw-loader!../assets/code/graphql-hello-2.example")}
             margin="-280px auto"
           />
@@ -180,6 +196,25 @@ export default class Presentation extends React.Component {
           <Text margin="40px 0" textColor="primary" textSize={44} bold>
             Let's do it live
           </Text>
+          <Image src={images.live.replace("/", "")} margin="0px auto 40px" height="500px" />          
+          <ListItem>https://www.graphqlhub.com/playground</ListItem>
+          <ListItem>http://graphql.org/swapi-graphql</ListItem>          
+        </Slide>
+        <Slide transition={["zoom"]} bgColor="primary">
+          <CodePane
+            textSize={20}
+            lang="jsx"
+            source={require("raw-loader!../assets/code/listpage_react.example")}
+            margin="-280px auto"
+          />
+        </Slide>
+        <Slide transition={["zoom"]} bgColor="primary">
+          <CodePane
+            textSize={32}
+            lang="jsx"
+            source={require("raw-loader!../assets/code/react_with_graphql.example")}
+            margin="-280px auto"
+          />
         </Slide>
       </Deck>
     );
