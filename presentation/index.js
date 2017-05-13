@@ -95,19 +95,12 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
         <Slide transition={["zoom"]} bgColor="primary">
-          <Heading size={5} fit caps lineHeight={1} textColor="secondary" margin="30px auto" >
-            Does everyone know what rest is?
-          </Heading>
-          <Image src={images.rest.replace("/", "")} margin="0px auto 40px" height="550px" />
-        </Slide>
-        <Slide transition={["slide"]} bgColor="primary">
-            <Link href="https://api.meetup.com/2/rsvps?offset=0&format=json&rsvp=yes&event_id=238695705&photo-host=public&page=100&fields=&omit=venue%2Cmember_photo%2Ccreated%2Cguests%2Crsvp_id%2Cevent%2Cgroup%2Cresponse%2Cmtime&order=event&desc=false&sig_id=161221962&sig=95ffa0225a060c087abd27bc9a55159b79da48b1">Lets get your names</Link>
-            <Appear><Text margin="30px 0">https://api.meetup.com/2/rsvps</Text></Appear>
-        </Slide>
-        <Slide transition={["zoom"]} bgColor="primary">
-          <Heading size={5} fit caps lineHeight={1} textColor="secondary" margin="30px auto" >
-            So what's the problem?
-          </Heading>
+            <Heading size={5} fit caps lineHeight={1} textColor="secondary" margin="30px auto" >
+            Let's talk about REST
+            </Heading>
+          <Appear><Heading size={5} fit caps lineHeight={1} textColor="tertiary" margin="30px auto" >
+            So what's the problem with REST?
+          </Heading></Appear>
           <Appear>
             <Image src={images.full_profile.replace("/", "")} margin="0px auto 40px" height="650px" />
           </Appear>
@@ -194,11 +187,19 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide bgColor="secondary">
           <Text margin="40px 0" textColor="primary" textSize={44} bold>
-            Let's do it live
+            Let's do it live!
           </Text>
-          <Image src={images.live.replace("/", "")} margin="0px auto 40px" height="500px" />          
-          <ListItem>https://www.graphqlhub.com/playground</ListItem>
-          <ListItem>http://graphql.org/swapi-graphql</ListItem>          
+          <Image src={images.live.replace("/", "")} margin="0px auto 40px" height="500px" />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={3} textColor="secondary" caps>Live Examples</Heading>
+          <List>
+            <ListItem>http://swapi.co/ (REST)</ListItem>
+            <ListItem>http://graphql.org/swapi-graphql</ListItem>            
+            <ListItem>https://graphqlhub.com/playground</ListItem>
+            <ListItem>avoid making several roundtrips</ListItem>
+            <ListItem>Decouple API and database schemas</ListItem>
+          </List>
         </Slide>
         <Slide transition={["zoom"]} bgColor="primary">
           <CodePane
